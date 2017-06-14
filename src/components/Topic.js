@@ -8,8 +8,11 @@ import './Topic.css';
 const { helpers } = constants;
 const { formatVotes, trimTopicTitle } = helpers;
 
-const Topic = ({ topic }) => (
-  <div className='Topic'>
+const Topic = ({
+  topic,
+  handleClick,
+}) => (
+  <div className='Topic' onClick={() => handleClick(topic)}>
     <img
       className='Topic-thumbnail'
       src={topic.data.thumbnail}

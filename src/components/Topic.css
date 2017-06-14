@@ -9,6 +9,9 @@
   line-height: normal;
   border-bottom: 1px solid rgba(117, 120, 133, 0.6);
 }
+.Topic:hover {
+  background-color: white;
+}
 .Topic-details {
   flex-direction: column;
   text-align: left;
