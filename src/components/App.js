@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Constants from '../constants';
+import helpers from '../constants/helperFunctions';
 import './App.css';
 
-const { subRedditURL } = Constants.helpers;
+const { subRedditURL } = helpers;
 
 class App extends Component {
   componentWillMount() {
