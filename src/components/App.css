@@ -3,7 +3,7 @@
 .App {
   text-align: center;
   color: white;
-  font: 20px 'Exo';
+  font: 32px 'Exo', sans-serif;
   font-weight: 400;
   line-height: 75px;
 }
