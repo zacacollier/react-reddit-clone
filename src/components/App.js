@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import helpers from '../constants/helperFunctions';
+import Constants from '../constants'
 import './App.css';
 
-const { subRedditURL } = helpers;
+const { helpers } = Constants;
 
 class App extends Component {
   componentWillMount() {
-    axios.get(subRedditURL('funny'))
+    axios.get(helpers.subRedditURL('funny'))
     .then(res => console.log(res))
     .catch(err => console.log(err))
   }

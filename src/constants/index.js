@@ -1,7 +1,9 @@
+import actionTypes from './actionTypes';
+import initialState from './initialState';
+import helpers from './helperFunctions';
+
 export default {
-  initialState: {
-    API: {
-      status: 'PENDING',
-    },
-  },
-}
+  actionTypes,
+  initialState,
+  helpers,
+};
