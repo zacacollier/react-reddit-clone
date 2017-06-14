@@ -1,11 +1,11 @@
 import React from 'react';
+import Header from './Header';
 import './App.css';
 
 const App = (props) => (
   <div className="App">
-    <div className="App-header">
-      <h2>Reddit</h2>
-    </div>
+    <Header>
+    </Header>
     <p className="App-intro">
     </p>
   </div>
