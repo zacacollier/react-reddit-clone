@@ -6,9 +6,10 @@ import './TopicsList.css';
 
 const TopicsList = ({
   topics,
-  handleTopicClick
+  handleTopicClick,
 }) => (
   <div className='TopicsList'>
+    { /* TODO make a Search error trigger a relevant prompt */}
     {
       topics ?
       topics.map((topic, i) =>
