@@ -9,6 +9,18 @@ export default (state = initialState.API, action) => {
         ...state,
         status: "PENDING"
       }
+    case actionTypes.SEARCH_API_SUCCESS:
+      return {
+        ...state,
+        status: "SUCCESS",
+        data: action.data,
+      }
+    case actionTypes.SEARCH_API_ERROR:
+      return {
+        ...state,
+        status: "ERROR",
+        error: action.error,
+      }
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import App from './components/App';
+import AppWrapper from './components/AppWrapper';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import store from './store'
@@ -9,7 +9,7 @@ import store from './store'
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <AppWrapper />
   </Provider>,
   document.getElementById('root')
 );

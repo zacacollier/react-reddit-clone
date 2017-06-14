@@ -1,28 +1,15 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import Constants from '../constants'
+import React from 'react';
 import './App.css';
 
-const { helpers } = Constants;
-
-class App extends Component {
-  componentWillMount() {
-    axios.get(helpers.subRedditURL('funny'))
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
-  }
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = (props) => (
+  <div className="App">
+    <div className="App-header">
+      <h2>Welcome to React</h2>
+    </div>
+    <p className="App-intro">
+      To get started, edit <code>src/App.js</code> and save to reload.
+    </p>
+  </div>
+);
 
 export default App;
