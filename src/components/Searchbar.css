@@ -8,18 +8,18 @@
   display: flex;
   justify-content: flex-end;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 12px 0;
 }
 .Searchbar-input {
   width: 33%;
-  color: #0BB7FF;
+  height: 36px;
+  align-self: stretch;
+  padding: 0 15px;
   font: inherit;
   font-size: 20px;
-  padding: 10px;
+  color: #0BB7FF;
   border-radius: 25px;
   border-style: none;
-  line-height: 32px;
-  align-self: stretch;
   transition: width 300ms ease;
 }
 .Searchbar-input:focus {
