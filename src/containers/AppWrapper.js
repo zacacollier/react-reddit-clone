@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import App from './App';
+import App from '../components/App';
 import { subRedditSearch } from '../actions/API';
 
 class AppWrapper extends Component {
@@ -16,8 +16,9 @@ class AppWrapper extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  redditData: state.API.data,
+const mapStateToProps = ({ API }) => ({
+  searchStatus: API.status,
+  searchResults: API.data,
 });
 const mapDispatchToProps = (dispatch) => ({
   initialSearch: (subReddit) => dispatch(subRedditSearch(subReddit)),

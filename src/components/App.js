@@ -1,13 +1,12 @@
 import React from 'react';
 import Header from './Header';
+import Spinner from './Spinner';
 import './App.css';
 
-const App = (props) => (
+const App = ({ searchResults, searchStatus }) => (
   <div className="App">
-    <Header>
-    </Header>
-    <p className="App-intro">
-    </p>
+    <Header />
+    <Spinner status={searchStatus} />
   </div>
 );
 

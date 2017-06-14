@@ -3,7 +3,11 @@
   background-color: #0BB7FF;
   height: 75px;
   width: 100%;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   font-weight: 500;
+  flex-direction: row;
+  box-sizing: border-box;
 }
