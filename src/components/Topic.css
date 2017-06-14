@@ -15,6 +15,10 @@
   line-height: 40px;
   width: 100%;
 }
+/* TODO: replace with something a little safer */
+.Topic-details > * {
+  padding: 10px 0;
+}
 .Topic-thumbnail {
   height: 90px;
   width: 90px;
@@ -31,9 +35,27 @@
 .Topic-stats {
   display: flex;
   flex-direction: row;
-  width: 33.3%;
+  width: 41.2%;
   justify-content: space-between;
   color: #757885;
   font-size: 14px;
   line-height: normal;
+}
+.Topic-stat {
+  line-height: 14px;
+}
+.sprite {
+  object-fit: none;
+  width: 16px;
+  height: 16px;
+  margin: auto 10px;
+}
+.comments-sprite {
+  object-position: 0 0;
+}
+.ups-sprite {
+  object-position: 0 -16px;
+}
+.downs-sprite {
+  object-position: 0 -32px;
 }

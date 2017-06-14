@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import constants from '../constants';
 import unknown from '../assets/images/unknown.png';
+import sprite from '../assets/images/icon-sprite.png';
 import './Topic.css';
+
+const { helpers } = constants;
 
 const Topic = ({ topic }) => (
   <div className='Topic'>
@@ -19,11 +23,39 @@ const Topic = ({ topic }) => (
     }
     <div className='Topic-details'>
       <p className='Topic-author'>{topic.data.author}</p>
-      <p className='Topic-title'>{topic.data.title}</p>
+      { /* TODO: add a component to 'expand' on hover */ }
+      <p className='Topic-title'>{helpers.trimTopicTitle(topic.data.title)}</p>
       <div className='Topic-stats'>
-        <p className='Topic-num_comments'>{topic.data.num_comments} comments</p>
-        <p className='Topic-ups'>{topic.data.ups} ups</p>
-        <p className='Topic-downs'>{topic.data.downs} downs</p>
+        <div className='Topic-num_comments'>
+          <span className='Topic-stat'>
+            <img
+              className='sprite comments-sprite'
+              src={sprite}
+              alt='comments'
+            />
+            {topic.data.num_comments} comments
+          </span>
+        </div>
+        <div className='Topic-ups'>
+          <span className='Topic-stat'>
+            <img
+              className='sprite ups-sprite'
+              src={sprite}
+              alt='upvotes'
+            />
+            {topic.data.ups} ups
+          </span>
+        </div>
+        <div className='Topic-downs'>
+          <span className='Topic-stat'>
+            <img
+              className='sprite downs-sprite'
+              src={sprite}
+              alt='downvotes'
+            />
+        {topic.data.downs} downs
+          </span>
+        </div>
       </div>
     </div>
   </div>
