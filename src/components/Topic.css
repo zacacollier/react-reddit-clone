@@ -40,9 +40,11 @@
   color: #757885;
   font-size: 14px;
   line-height: normal;
+  /* TODO: make this not iffy */
+  padding: 15px 0;
 }
 .Topic-stat {
-  line-height: 14px;
+  display: flex;
 }
 .sprite {
   object-fit: none;

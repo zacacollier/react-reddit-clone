@@ -6,6 +6,7 @@ import sprite from '../assets/images/icon-sprite.png';
 import './Topic.css';
 
 const { helpers } = constants;
+const { formatVotes, trimTopicTitle } = helpers;
 
 const Topic = ({ topic }) => (
   <div className='Topic'>
@@ -24,7 +25,7 @@ const Topic = ({ topic }) => (
     <div className='Topic-details'>
       <p className='Topic-author'>{topic.data.author}</p>
       { /* TODO: add a component to 'expand' on hover */ }
-      <p className='Topic-title'>{helpers.trimTopicTitle(topic.data.title)}</p>
+      <p className='Topic-title'>{trimTopicTitle(topic.data.title)}</p>
       <div className='Topic-stats'>
         <div className='Topic-num_comments'>
           <span className='Topic-stat'>
@@ -33,7 +34,7 @@ const Topic = ({ topic }) => (
               src={sprite}
               alt='comments'
             />
-            {topic.data.num_comments} comments
+            {formatVotes(topic.data.num_comments, 'comment')}
           </span>
         </div>
         <div className='Topic-ups'>
@@ -43,7 +44,7 @@ const Topic = ({ topic }) => (
               src={sprite}
               alt='upvotes'
             />
-            {topic.data.ups} ups
+            {formatVotes(topic.data.ups, 'up')}
           </span>
         </div>
         <div className='Topic-downs'>
@@ -53,7 +54,7 @@ const Topic = ({ topic }) => (
               src={sprite}
               alt='downvotes'
             />
-        {topic.data.downs} downs
+            {formatVotes(topic.data.downs, 'down')}
           </span>
         </div>
       </div>
