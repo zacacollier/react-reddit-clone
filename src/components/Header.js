@@ -1,9 +1,11 @@
 import React from 'react';
+import Searchbar from './Searchbar';
 import './Header.css'
 
 const Header = () => (
-  <div className="header">
+  <div className="Header">
     <h2>Reddit</h2>
+    <Searchbar />
   </div>
 );
 
