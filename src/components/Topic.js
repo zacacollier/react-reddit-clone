@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TopicStat from './TopicStat';
 import constants from '../constants';
-import sprite from '../assets/images/icon-sprite.png';
 import unknown from '../assets/images/unknown.png';
 import './Topic.css';
 
@@ -36,6 +35,11 @@ const Topic = ({
       </p>
       <div className='Topic-stats'>
         <TopicStat
+          statData={topic.data.num_comments}
+          statHelper={formatVotes}
+          statType='comment'
+        />
+        <TopicStat
           statData={topic.data.ups}
           statHelper={formatVotes}
           statType='up'
@@ -44,11 +48,6 @@ const Topic = ({
           statData={topic.data.downs}
           statHelper={formatVotes}
           statType='down'
-        />
-        <TopicStat
-          statData={topic.data.num_comments}
-          statHelper={formatVotes}
-          statType='comment'
         />
       </div>
     </div>

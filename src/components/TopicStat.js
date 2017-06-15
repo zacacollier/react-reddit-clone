@@ -9,12 +9,13 @@ const TopicStat = ({
   <div className={`Topic-${statType}`}>
     <span className='Topic-stat'>
       <img
-        className={`sprite ${statType}-sprite`}
+        className={`sprite ${statType}s-sprite`}
         src={sprite}
         alt={`${statType}s`}
       />
-      <p className='Topic-statDataCount'>{statData}</p>
-      {/* {statHelper(statData, statType)} */}
+      <p className='Topic-statDataCount'>
+        {statHelper(statData, statType)}
+      </p>
     </span>
   </div>
 );

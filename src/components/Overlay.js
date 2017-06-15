@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import DraggableTopic from './DraggableTopic';
@@ -19,7 +20,7 @@ const Overlay = ({
       display: !!overlayIsVisible ? 'flex' : 'none',
     }}>
     <div className='Overlay-DndContainer'>
-      <DraggableTopic id={1} topic={topic} />
+      <DraggableTopic topic={topic} />
       <h2 className='Overlay-DragTitle'>
         Drag the card on the left to the desired action
       </h2>
@@ -30,5 +31,10 @@ const Overlay = ({
     </div>
   </div>
 );
+Overlay.propTypes = {
+  overlayIsVisible: PropTypes.bool.isRequired,
+  topic: PropTypes.object,
+  handleCloseOverlay: PropTypes.func.isRequired,
+}
 
 export default DragDropContext(HTML5Backend)(Overlay);
