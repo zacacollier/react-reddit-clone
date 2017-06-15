@@ -12,6 +12,7 @@ const { formatVotes } = helpers;
 const collect = (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging(),
+  canDrag: monitor.canDrag(),
 });
 const topicSource = {
   beginDrag(props) {
@@ -42,12 +43,14 @@ const DraggableTopic = ({
     <div className='DraggableTopic-TopicStatRow'>
       <TopicStat
         className='DraggableTopic-TopicStat'
+        isDndTopic={true}
         statData={topic.num_comments}
         statHelper={formatVotes}
         statType='comment'
       />
       <TopicStat
         className='DraggableTopic-TopicStat'
+        isDndTopic={true}
         statData={topic.ups}
         statHelper={formatVotes}
         statType='up'

@@ -4,7 +4,7 @@ import sprite from '../assets/images/icon-sprite.png';
 import './Topic.css';
 
 const TopicStat = ({
-  statData, statHelper, statType,
+  isDndTopic, statData, statHelper, statType,
 }) => (
   <div className={`Topic-${statType}`}>
     <span className='Topic-stat'>
@@ -14,7 +14,10 @@ const TopicStat = ({
         alt={`${statType}s`}
       />
       <p className='Topic-statDataCount'>
-        {statHelper(statData, statType)}
+        {isDndTopic ?
+          `${statData}` :
+          statHelper(statData, statType)
+        }
       </p>
     </span>
   </div>
