@@ -16,7 +16,7 @@ class AppWrapper extends Component {
   }
 }
 
-const mapStateToProps = ({ API, overlay }) => ({
+const mapStateToProps = ({ API }) => ({
   searchStatus: API.status,
   searchResults: API.data,
 });

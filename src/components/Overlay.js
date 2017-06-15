@@ -6,12 +6,12 @@ import DndLink from './DndLink';
 import './Overlay.css';
 
 const Overlay = ({
-  isVisible,
+  overlayIsVisible,
 }) => (
   <div
     className='Overlay'
     style={{
-      display: !!isVisible ? 'none' : 'flex',
+      display: !!overlayIsVisible ? 'flex' : 'none',
     }}>
     <div className='Overlay-DndContainer'>
       <DraggableTopic id={1} />

@@ -15,7 +15,7 @@ const TopicsList = ({
       topics.map((topic, i) =>
         <Topic topic={topic} key={i} handleClick={(topic) => handleTopicClick(topic)} />
       )
-      : <div className='TopicsList-noTopics'>No Reddit topics. Try searching for something else.</div>
+      : <div className='TopicsList-noTopics'></div>
     }
   </div>
 );
