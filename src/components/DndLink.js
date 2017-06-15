@@ -24,14 +24,14 @@ const DndLink = ({
 }) => connectDropTarget(
   <div
     style={{
-      width: '600px',
-      height: '600px',
     }}
     className='Overlay-DndComponent DropTarget'
   >
     { canDrop ? 'target' : '(target)'}
     { isOver ? 'hovering' : 'not hovering'}
+    { didDrop && console.log('dropped') }
   </div>
 );
-
+// The first parameter MUST be the type of
+// the DragSource
 export default DropTarget(D.TOPIC, dropSpec, collect)(DndLink)

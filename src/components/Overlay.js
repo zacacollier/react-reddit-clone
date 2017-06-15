@@ -15,7 +15,13 @@ const Overlay = ({
     }}>
     <div className='Overlay-DndContainer'>
       <DraggableTopic id={1} />
-      <DndLink />
+      <h2 className='Overlay-DragTitle'>
+        Drag the card on the left to the desired action
+      </h2>
+      <div className='Overlay-DndLinkContainer'>
+        <DndLink />
+        <DndLink />
+      </div>
     </div>
   </div>
 );

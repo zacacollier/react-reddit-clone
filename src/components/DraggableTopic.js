@@ -19,12 +19,12 @@ const DraggableTopic = ({
   connectDragSource, isDragging,
 }) => connectDragSource(
   <div
-    className='Overlay-DndComponent Draggable'
+    className='Overlay-DndComponent DraggableTopic'
     style={{
       opacity: isDragging ? 0.5 : 1,
       // padding: isDragging ? '15px' : '25px',
       cursor: 'move',
-      transition: 'padding 300ms ease',
+      transition: 'opacity 300ms ease',
     }}>
     topic
   </div>
