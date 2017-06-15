@@ -25,7 +25,11 @@ const topicSource = {
 const DraggableTopic = ({
   connectDragSource, isDragging,
   topic,
-}) => topic ? connectDragSource(
+}) => topic ?
+// If the topic exists in `props`
+// connect the DragSource and render.
+// Otherwise, return an empty <div>.
+connectDragSource(
   <div
     className='DraggableTopic-DndComponent DraggableTopic'
     style={{
@@ -57,7 +61,9 @@ const DraggableTopic = ({
       />
     </div>
   </div>
-) : <div></div>
+) :
+<div></div>;
+
 DraggableTopic.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
   isDragging: PropTypes.bool.isRequired,
