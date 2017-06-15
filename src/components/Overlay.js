@@ -8,13 +8,14 @@ import './Overlay.css';
 
 const Overlay = ({
   overlayIsVisible, topic,
-  handleCloseOverlay,
+  handleCloseOverlay, shareRedditTopic,
 }) => (
   <div
     className='Overlay'
     id='Overlay'
-    // pass the element's `id` up to OverlayWrapper
-    // (only toggle visibility when the background is clicked)
+    /* pass the element's `id` up to OverlayWrapper
+    * (only toggle visibility when the background is clicked)
+    */
     onClick={(e) => handleCloseOverlay(e.target.id)}
     style={{
       display: !!overlayIsVisible ? 'flex' : 'none',
@@ -25,8 +26,16 @@ const Overlay = ({
         Drag the card on the left to the desired action
       </h2>
       <div className='Overlay-DndLinkContainer'>
-        <DndLink />
-        <DndLink />
+        <DndLink
+          linkType='reddit'
+          shareText='Open on Reddit'
+          shareTopic={(topic, type) => shareRedditTopic(topic, type)}
+        />
+        <DndLink
+          linkType='mail'
+          shareText='Email to a Friend'
+          shareTopic={(topic, type) => shareRedditTopic(topic, type)}
+        />
       </div>
     </div>
   </div>
@@ -35,6 +44,7 @@ Overlay.propTypes = {
   overlayIsVisible: PropTypes.bool.isRequired,
   topic: PropTypes.object,
   handleCloseOverlay: PropTypes.func.isRequired,
+  shareRedditTopic: PropTypes.func.isRequired,
 }
 
 export default DragDropContext(HTML5Backend)(Overlay);

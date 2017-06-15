@@ -16,6 +16,7 @@ const mapStateToProps = ({ overlay, topic }) => ({
   ...topic
 })
 const mapDispatchToProps = (dispatch) => ({
+  shareRedditTopic: (topic, type) => console.log(topic, type),
     // (only toggle visibility when the '#Overlay' background is clicked)
   toggleOverlay: (id) => id === 'Overlay' && dispatch(toggleOverlayVisibility()),
 })
