@@ -17,19 +17,23 @@ const collect = (connect, monitor) => ({
   isOver: monitor.isOver(),
   canDrop: monitor.canDrop(),
   didDrop: monitor.didDrop(),
+  getItem: monitor.getItem(),
+  getDrop: monitor.getDropResult(),
 });
 // TODO: separate into component and container
 const DndLink = ({
-  connectDropTarget, isOver, canDrop, didDrop
+  LinkType,
+  connectDropTarget, isOver, canDrop, didDrop, getDrop, getItem
 }) => connectDropTarget(
   <div
     style={{
+      opacity: isOver ? 0.5 : 1,
     }}
     className='Overlay-DndComponent DropTarget'
   >
     { canDrop ? 'target' : '(target)'}
-    { isOver ? 'hovering' : 'not hovering'}
-    { didDrop && console.log('dropped') }
+    { isOver ? console.log(getItem) : 'not hovering'}
+    { didDrop && console.log(getItem) }
   </div>
 );
 // The first parameter MUST be the type of
