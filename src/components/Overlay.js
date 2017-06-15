@@ -10,6 +10,7 @@ const Overlay = ({
 }) => (
   <div
     className='Overlay'
+    onClick={(e) => console.log(e.target.className)}
     style={{
       display: !!overlayIsVisible ? 'flex' : 'none',
     }}>

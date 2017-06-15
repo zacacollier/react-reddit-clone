@@ -11,7 +11,11 @@ import './App.css';
  */
 const App = ({ searchResults, searchStatus, overlayIsVisible }) => (
   <div className="App">
-    <OverlayWrapper/>
+    <OverlayWrapper
+      style={{
+        transition: 'all 300ms ease',
+      }}
+    />
     <Header />
     <Spinner status={searchStatus} />
     <TopicsList topics={searchResults} />

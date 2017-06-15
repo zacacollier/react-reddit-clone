@@ -7,7 +7,7 @@ const {
 
 export default (state = initialState.overlay, action) => {
   switch (action.type) {
-    case actionTypes.SET_OVERLAY_VISIBILITY:
+    case actionTypes.TOGGLE_OVERLAY_VISIBILITY:
     return {
       ...state,
       isVisible: !state.isVisible,
