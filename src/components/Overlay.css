@@ -1,0 +1,32 @@
+.Overlay {
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(34, 34, 34, 0.5);
+  justify-content: center;
+  flex-direction: column;
+}
+.Overlay-DndContainer {
+  min-height: 66.7%;
+  width: 66.7%;
+  display: flex;
+  align-self: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.Overlay-DndComponent {
+  background-color: white;
+  color: #222;
+  /*min-height: 150px;*/
+  /*max-width: 200px;*/
+  border-radius: 30px;
+  flex-direction: column;
+  justify-content: center;
+}
+.DropTarget {
+  background-color: white;
+  color: #222;
+  /*max-height: 150px;*/
+  /*max-width: 200px;*/
+}

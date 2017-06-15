@@ -3,7 +3,7 @@ export default {
     status: 'PENDING',
   },
   overlay: {
-    isVisible: false,
+    isVisible: true,
   },
   topic: {},
 };

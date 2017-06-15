@@ -6,10 +6,14 @@ import Spinner from './Spinner';
 import TopicsList from './TopicsList';
 import './App.css';
 
+/*
+ * NB: Header contains the Searchbar component
+ */
 const App = ({ searchResults, searchStatus, overlayVisibility }) => (
   <div className="App">
-    { /* NB: Header contains the Searchbar component */ }
-    <Overlay />
+    <Overlay
+      isVisible={overlayVisibility}
+    />
     <Header />
     <Spinner status={searchStatus} />
     <TopicsList topics={searchResults} />

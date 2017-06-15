@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource } from 'react-dnd';
-import * as D from '../constants/dragTypes';
+import * as D from '../constants/dndTypes';
 
 const collect = (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
@@ -18,12 +18,14 @@ const topicSource = {
 const DraggableTopic = ({
   connectDragSource, isDragging,
 }) => connectDragSource(
-  <div style={{
-    opacity: isDragging ? 0.5 : 1,
-    backgroundColor: '#222',
-    width: '100px',
-    cursor: 'move',
-  }}>
+  <div
+    className='Overlay-DndComponent Draggable'
+    style={{
+      opacity: isDragging ? 0.5 : 1,
+      // padding: isDragging ? '15px' : '25px',
+      cursor: 'move',
+      transition: 'padding 300ms ease',
+    }}>
     topic
   </div>
 )
