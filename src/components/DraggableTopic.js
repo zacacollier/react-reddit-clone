@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource } from 'react-dnd';
+
+// import helpers from '../constants/helperFunctions';
 import * as D from '../constants/dndTypes';
+// const { formatVotes } = helpers;
 
 const collect = (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
@@ -17,7 +20,8 @@ const topicSource = {
 
 const DraggableTopic = ({
   connectDragSource, isDragging,
-}) => connectDragSource(
+  topic,
+}) => topic ? connectDragSource(
   <div
     className='Overlay-DndComponent DraggableTopic'
     style={{
@@ -26,9 +30,9 @@ const DraggableTopic = ({
       cursor: 'move',
       transition: 'opacity 300ms ease',
     }}>
-    topic
+    <h1>{topic.author}</h1>
   </div>
-)
+) : <div></div>
 DraggableTopic.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
   isDragging: PropTypes.bool.isRequired,

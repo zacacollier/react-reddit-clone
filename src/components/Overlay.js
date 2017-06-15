@@ -6,16 +6,20 @@ import DndLink from './DndLink';
 import './Overlay.css';
 
 const Overlay = ({
-  overlayIsVisible,
+  overlayIsVisible, topic,
+  handleCloseOverlay,
 }) => (
   <div
     className='Overlay'
-    onClick={(e) => console.log(e.target.className)}
+    id='Overlay'
+    // pass the element's `id` up to OverlayWrapper
+    // (only toggle visibility when the background is clicked)
+    onClick={(e) => handleCloseOverlay(e.target.id)}
     style={{
       display: !!overlayIsVisible ? 'flex' : 'none',
     }}>
     <div className='Overlay-DndContainer'>
-      <DraggableTopic id={1} />
+      <DraggableTopic id={1} topic={topic} />
       <h2 className='Overlay-DragTitle'>
         Drag the card on the left to the desired action
       </h2>
