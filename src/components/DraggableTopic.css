@@ -1,0 +1,27 @@
+.Overlay-DndComponent {
+  background-color: white;
+  color: #222;
+  border-radius: 25px;
+  flex-direction: column;
+  justify-content: center;
+}
+.DraggableTopic {
+  max-width: 33.3%;
+  background-color: white;
+  color: #222;
+  padding: 15px;
+  border-radius: 25px;
+}
+.DraggableTopic-TopicStatRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.DraggableTopic-TopicAuthor {
+  color: #0BB7FF;
+}
+.DraggableTopic-TopicTitle {
+  color: #222;
+  font-size: 16px;
+  line-height: 150%;
+}

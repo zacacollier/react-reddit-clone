@@ -22,24 +22,14 @@
   flex-direction: column;
   width: 33.4%;
 }
-.Overlay-DndComponent {
-  background-color: white;
-  color: #222;
-  border-radius: 25px;
-  flex-direction: column;
-  justify-content: center;
-}
-.DraggableTopic {
-  min-width: 350px;
-}
-.DropTarget {
-  background-color: white;
-  height: 42%;
-  color: #222;
-}
 .Overlay-DragTitle {
   width: 16.7%;
   flex-direction: column;
   align-self: center;
   line-height: normal;
+}
+.DropTarget {
+  background-color: white;
+  height: 42%;
+  color: #222;
 }

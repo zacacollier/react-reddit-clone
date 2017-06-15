@@ -11,6 +11,6 @@ export default {
   // Keep the topic's title from overflowing the container's dimensions
   trimTopicTitle: (title, len = 60) =>
     title.length >= len ?
-    take(title, len).concat('...(more)')
+    take(title, len).concat('...(click for more)')
     : title,
 };

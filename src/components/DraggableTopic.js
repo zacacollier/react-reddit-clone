@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource } from 'react-dnd';
+import TopicStat from '../components/TopicStat';
 
-// import helpers from '../constants/helperFunctions';
+import './Topic.css'
+import './DraggableTopic.css';
+import helpers from '../constants/helperFunctions';
 import * as D from '../constants/dndTypes';
-// const { formatVotes } = helpers;
+const { formatVotes } = helpers;
 
 const collect = (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
@@ -13,7 +16,7 @@ const collect = (connect, monitor) => ({
 const topicSource = {
   beginDrag(props) {
     // we need to retain the props of the topic being dragged
-    const topic = { id: props.id };
+    const topic = { ...props.topic };
     return topic;
   },
 };
@@ -23,14 +26,33 @@ const DraggableTopic = ({
   topic,
 }) => topic ? connectDragSource(
   <div
-    className='Overlay-DndComponent DraggableTopic'
+    className='DraggableTopic-DndComponent DraggableTopic'
     style={{
       opacity: isDragging ? 0.5 : 1,
-      // padding: isDragging ? '15px' : '25px',
       cursor: 'move',
       transition: 'opacity 300ms ease',
     }}>
-    <h1>{topic.author}</h1>
+    <img
+      className='Topic-thumbnail'
+      src={topic.thumbnail}
+      alt={topic.title}
+    />
+    <h1 className='DraggableTopic-TopicAuthor'>{topic.author}</h1>
+    <h2 className='DraggableTopic-TopicTitle'>{topic.title}</h2>
+    <div className='DraggableTopic-TopicStatRow'>
+      <TopicStat
+        className='DraggableTopic-TopicStat'
+        statData={topic.num_comments}
+        statHelper={formatVotes}
+        statType='comment'
+      />
+      <TopicStat
+        className='DraggableTopic-TopicStat'
+        statData={topic.ups}
+        statHelper={formatVotes}
+        statType='up'
+      />
+    </div>
   </div>
 ) : <div></div>
 DraggableTopic.propTypes = {

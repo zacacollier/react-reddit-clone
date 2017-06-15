@@ -49,6 +49,10 @@
 .Topic-stat {
   display: flex;
 }
+.Topic-statDataCount {
+  font-size: 14px;
+  color: #757885;
+}
 .sprite {
   object-fit: none;
   width: 16px;
