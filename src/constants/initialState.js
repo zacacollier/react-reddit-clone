@@ -21,5 +21,8 @@ export default {
     ]
   },
   topic: {},
-  lastDroppedItem: {},
+  lastDroppedItem: {
+    selectedItem: {},
+    linkType: null,
+  },
 };

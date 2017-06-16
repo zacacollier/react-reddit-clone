@@ -8,7 +8,7 @@ import './Overlay.css';
 
 const Overlay = ({
   dndLinkAccepts, overlayIsVisible, topic,
-  handleCloseOverlay, emailRedditTopic, openRedditTopic, setLastDroppedItem,
+  handleCloseOverlay, emailRedditTopic, openRedditTopic,
 }) => (
   <div
     className='Overlay'
@@ -29,18 +29,16 @@ const Overlay = ({
         Drag the card on the left to the desired action
       </h2>
       <div className='Overlay-DndLinkContainer'>
-        {
-          dndLinkAccepts.map((accept, i) =>
-            <DndLink
-              linkType={accept.linkType}
-              shareText={accept.linkText}
-              dndType={accept.accepts}
-              lastDroppedItem={accept.lastDroppedItem}
-              setLastDroppedItem={(item) => setLastDroppedItem(item)}
-              key={i}
-            />
-          )
-        }
+        <DndLink
+          linkType={'reddit'}
+          shareText={'Open on Reddit'}
+          dndType={'topic/open'}
+        />
+        <DndLink
+          linkType={'mail'}
+          shareText={'Email to a friend'}
+          dndType={'topic/mail'}
+        />
       </div>
     </div>
   </div>
