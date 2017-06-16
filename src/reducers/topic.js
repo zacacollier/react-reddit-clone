@@ -16,6 +16,12 @@ export default (state = initialState.topic, action) => {
         ...state,
         topic: action.topic.data,
       }
+    case actionTypes.SET_SHARE_TOPIC:
+      return {
+        ...state,
+        shareTopic: action.topic,
+        shareType: action.shareType
+      }
     default:
       return state;
   }

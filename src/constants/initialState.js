@@ -5,5 +5,7 @@ export default {
   overlay: {
     isVisible: false,
   },
-  topic: {},
+  topic: {
+    shareTopic: {}
+  },
 };

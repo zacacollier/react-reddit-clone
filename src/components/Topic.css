@@ -29,7 +29,7 @@
   border: 5px solid #DEDFED;
   border-radius: 100px;
   object-fit: fill;
-  /* TODO: 'scale to fill' image resolution */
+  align-self: center;
 }
 .Topic-title {
   color: #222;

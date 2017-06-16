@@ -8,7 +8,7 @@ import './Overlay.css';
 
 const Overlay = ({
   overlayIsVisible, topic,
-  handleCloseOverlay, shareRedditTopic,
+  dispatchShareTopic, handleCloseOverlay, setShareType,
 }) => (
   <div
     className='Overlay'
@@ -29,12 +29,13 @@ const Overlay = ({
         <DndLink
           linkType='reddit'
           shareText='Open on Reddit'
-          shareTopic={(topic, type) => shareRedditTopic(topic, type)}
+          setSharedTopic={(topic, type) => setShareType(topic, type)}
+          dispatchShareTopic={(topic) => dispatchShareTopic(topic)}
         />
         <DndLink
           linkType='mail'
           shareText='Email to a Friend'
-          shareTopic={(topic, type) => shareRedditTopic(topic, type)}
+          setSharedTopic={(topic, type) => setShareType(topic, type)}
         />
       </div>
     </div>
@@ -44,7 +45,7 @@ Overlay.propTypes = {
   overlayIsVisible: PropTypes.bool.isRequired,
   topic: PropTypes.object,
   handleCloseOverlay: PropTypes.func.isRequired,
-  shareRedditTopic: PropTypes.func.isRequired,
+  setShareType: PropTypes.func.isRequired,
 }
 
 export default DragDropContext(HTML5Backend)(Overlay);

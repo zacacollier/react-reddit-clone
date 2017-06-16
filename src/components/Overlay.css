@@ -28,10 +28,3 @@
   align-self: center;
   line-height: normal;
 }
-.DropTarget {
-  background-color: white;
-  min-height: auto;
-  padding: 15px;
-  height: 42%;
-  color: #222;
-}

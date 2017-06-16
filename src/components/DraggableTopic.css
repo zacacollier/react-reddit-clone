@@ -6,11 +6,14 @@
   justify-content: center;
 }
 .DraggableTopic {
-  max-width: 33.3%;
+  width: 25%;
   background-color: white;
   color: #222;
   padding: 15px;
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .DraggableTopic-TopicStatRow {
   display: flex;
