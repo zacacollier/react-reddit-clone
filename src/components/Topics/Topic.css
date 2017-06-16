@@ -1,5 +1,5 @@
 .Topic {
-  height: 150px;
+  min-height: 150px;
   width: 100%;
   padding: 25px 0;
   flex-direction: row;

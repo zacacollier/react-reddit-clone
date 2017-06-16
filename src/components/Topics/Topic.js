@@ -22,9 +22,9 @@ const Topic = ({
         className='Topic-thumbnail'
         src={topic.data.thumbnail}
         alt={"none"}
-        />
+           />
     }
-      {
+    {
       /* NB:
         `Topic-details` is `flex-direction: column`,
          `Topic-stats' is `flex-direction: row`.
@@ -37,7 +37,7 @@ const Topic = ({
       </p>
       { /* TODO: add a component to 'expand' on hover */ }
       <p className='Topic-title'>
-        {trimTopicTitle(topic.data.title)}
+        {topic.data.title}
       </p>
       <div className='Topic-stats'>
         <TopicStat
