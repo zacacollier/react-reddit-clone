@@ -1,7 +1,7 @@
 .Topic {
   height: 150px;
   width: 100%;
-  padding: 15px 0;
+  padding: 25px 0;
   flex-direction: row;
   align-items: center;
   display: flex;
@@ -24,11 +24,13 @@
 }
 .Topic-thumbnail {
   height: 90px;
-  width: 90px;
+  min-width: 90px;
+  max-width: 90px;
   margin: 0 25px;
   border: 5px solid #DEDFED;
   border-radius: 100px;
   object-fit: fill;
+  align-self: center;
   /* TODO: 'scale to fill' image resolution */
 }
 .Topic-title {

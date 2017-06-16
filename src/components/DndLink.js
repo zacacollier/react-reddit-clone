@@ -4,6 +4,7 @@ import { DropTarget } from 'react-dnd';
 import mail from '../assets/images/mail-logo.png';
 import reddit from '../assets/images/reddit-logo.png';
 import * as D from '../constants/dndTypes'
+import './DndLink.css';
 
 const sprites = {
   mail,
@@ -43,8 +44,13 @@ const DndLink = ({
     }}
     className='Overlay-DndComponent DropTarget'
   >
-    <img src={sprites[linkType]} alt={'Share'}/>
-    <h2>{shareText}</h2>
+    <div className={`DropTarget-container ${linkType}`}>
+      <img className='DropTarget-img'
+        src={sprites[linkType]}
+        alt={'Share'}
+      />
+      <h1>{shareText}</h1>
+    </div>
   </div>
 );
 DndLink.propTypes = {

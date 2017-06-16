@@ -6,16 +6,23 @@
   justify-content: center;
 }
 .DraggableTopic {
-  max-width: 33.3%;
+  max-width: 27%;
+  height: 95%;
   background-color: white;
   color: #222;
   padding: 15px;
+  padding-top: 25px;
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: center;
 }
 .DraggableTopic-TopicStatRow {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  line-height: 170%;
 }
 .DraggableTopic-TopicAuthor {
   color: #0BB7FF;

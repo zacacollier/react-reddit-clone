@@ -9,7 +9,7 @@
   transition: display 300ms ease,
 }
 .Overlay-DndContainer {
-  min-height: 66.7%;
+  min-height: 76.7%;
   width: 66.7%;
   display: flex;
   align-self: center;
@@ -21,17 +21,11 @@
   justify-content: space-around;
   flex-direction: column;
   width: 33.4%;
+  height: auto;
 }
 .Overlay-DragTitle {
   width: 16.7%;
   flex-direction: column;
   align-self: center;
   line-height: normal;
-}
-.DropTarget {
-  background-color: white;
-  min-height: auto;
-  padding: 15px;
-  height: 42%;
-  color: #222;
 }
