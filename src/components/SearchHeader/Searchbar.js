@@ -23,7 +23,7 @@ const Searchbar = ({
         onChange={e => {
           handleSearchbarChange(e.target.value)
           // No need to spam requests
-          // (if the Search value is too short)
+          // if the Search value is too short
           if (searchValue.length > 3) {
             searchForSubReddit(searchValue)
           }
@@ -32,6 +32,7 @@ const Searchbar = ({
     </form>
   </div>
 );
+
 const mapStateToProps = ({ API }) => ({
   searchValue: API.searchValue,
 })

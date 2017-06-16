@@ -7,7 +7,7 @@ import DndLink from './DndLink';
 import './Overlay.css';
 
 const Overlay = ({
-  dndLinkAccepts, overlayIsVisible, topic,
+  overlayIsVisible, topic,
   handleCloseOverlay, emailDroppedItem, openDroppedItemOnReddit,
 }) => (
   <div
@@ -24,9 +24,11 @@ const Overlay = ({
       style={{
         visiblity: !!overlayIsVisible ? 'visible' : 'hidden',
         opacity: !!overlayIsVisible ? 1 : 0,
-        animation: 'fade 600ms',
+        animation: 'fade-in 600ms',
       }}
-      className='Overlay-DndContainer'>
+      className='Overlay-DndContainer'
+      id='Overlay-DndContainer'
+    >
       <DraggableTopic
         topic={topic}
       />
@@ -51,7 +53,9 @@ const Overlay = ({
   </div>
 );
 Overlay.propTypes = {
+  emailDroppedItem: PropTypes.func.isRequired,
   handleCloseOverlay: PropTypes.func.isRequired,
+  openDroppedItemOnReddit: PropTypes.func.isRequired,
   overlayIsVisible: PropTypes.bool.isRequired,
   topic: PropTypes.object,
 }

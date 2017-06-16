@@ -20,7 +20,8 @@ const mapStateToProps = ({ overlay, topic, lastDroppedItem }) => ({
 })
 const mapDispatchToProps = (dispatch) => ({
   // (only toggle visibility when the '#Overlay' background is clicked)
-  toggleOverlay: (id) => id === 'Overlay' && dispatch(toggleOverlayVisibility()),
+  toggleOverlay: (id) =>
+    (id === 'Overlay' || id === 'Overlay-DndContainer') && dispatch(toggleOverlayVisibility()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(OverlayWrapper)

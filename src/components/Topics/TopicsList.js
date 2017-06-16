@@ -1,21 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Topic from './Topic';
-import { connect } from 'react-redux';
-import { selectTopic } from '../../actions/selectTopic';
-import { toggleOverlayVisibility } from '../../actions/overlay';
 import './TopicsList.css';
 
+/* NB: <Topic />'s click handler sets the Overlay Visibility
+* and also dispatches the selected Topic's props to the store
+*/
 const TopicsList = ({
   topics,
   handleTopicClick,
 }) => (
   <div className='TopicsList'>
-    { /* TODO make a Search error trigger a relevant prompt */}
-    {
-      /* <Topic />'s click handler sets the Overlay Visibility
-       * and also dispatches the selected Topic's props to the store
-       */
-    }
     {
       topics ?
       topics.map((topic, i) =>
@@ -25,14 +20,9 @@ const TopicsList = ({
     }
   </div>
 );
+TopicsList.PropTypes = {
+  topics: PropTypes.array,
+  handleTopicClick: PropTypes.func.isRequired,
+}
 
-const mapStateToProps = (dispatch) => ({
-})
-const mapDispatchToProps = (dispatch) => ({
-  handleTopicClick: (topic) => {
-    dispatch(toggleOverlayVisibility())
-    dispatch(selectTopic(topic))
-  },
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(TopicsList);
+export default TopicsList

@@ -5,8 +5,12 @@ import constants from '../../constants';
 import unknown from '../../assets/images/unknown.png';
 import './Topic.css';
 
+/* If there's only 1 vote / comment,
+ * format the string to read "1 up" / "1 comment"
+ * (instead of "1 ups" / "1 comments")
+ */
 const { helpers } = constants;
-const { formatVotes, trimTopicTitle } = helpers;
+const { formatVotes } = helpers;
 
 const Topic = ({
   topic,
@@ -27,15 +31,14 @@ const Topic = ({
     {
       /* NB:
         `Topic-details` is `flex-direction: column`,
-         `Topic-stats' is `flex-direction: row`.
-         Hence the need for extra `<div>`s.
+        `Topic-stats' is `flex-direction: row`.
+        Hence the need for extra `<div>`s.
       */
     }
     <div className='Topic-details'>
       <p className='Topic-author'>
         {topic.data.author}
       </p>
-      { /* TODO: add a component to 'expand' on hover */ }
       <p className='Topic-title'>
         {topic.data.title}
       </p>

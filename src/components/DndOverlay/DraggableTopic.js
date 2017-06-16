@@ -68,6 +68,7 @@ connectDragSource(
 DraggableTopic.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
   isDragging: PropTypes.bool.isRequired,
+  topic: PropTypes.object,
 }
 
 /* DragSource expects 3 inputs:

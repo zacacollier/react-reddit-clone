@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import loader from '../assets/images/loader.gif';
 import './Spinner.css';
 
@@ -15,5 +16,8 @@ export const Spinner = ({ status }) => (
     }
   </div>
 );
+Spinner.propTypes = {
+  status: PropTypes.string.isRequired,
+};
 
 export default Spinner;

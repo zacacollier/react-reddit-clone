@@ -33,7 +33,7 @@ const collect = (connect, monitor) => ({
 });
 
 const DndLink = ({
-  // passed props & helper functions
+  // Passed props & helper functions:
   emailDroppedItem, openDroppedItemOnReddit, linkType, shareText,
   // ReactDnd props & methods:
   connectDropTarget, getItem, isOver,
