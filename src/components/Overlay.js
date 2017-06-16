@@ -8,7 +8,7 @@ import './Overlay.css';
 
 const Overlay = ({
   dndLinkAccepts, overlayIsVisible, topic,
-  handleCloseOverlay, emailRedditTopic, openRedditTopic,
+  handleCloseOverlay, emailDroppedItem, openDroppedItemOnReddit,
 }) => (
   <div
     className='Overlay'
@@ -33,11 +33,13 @@ const Overlay = ({
           linkType={'reddit'}
           shareText={'Open on Reddit'}
           dndType={'topic/open'}
+          openDroppedItemOnReddit={(item) => openDroppedItemOnReddit(item)}
         />
         <DndLink
           linkType={'mail'}
           shareText={'Email to a friend'}
           dndType={'topic/mail'}
+          emailDroppedItem={(item) => emailDroppedItem(item)}
         />
       </div>
     </div>
