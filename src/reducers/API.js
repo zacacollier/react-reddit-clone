@@ -1,13 +1,18 @@
-import Constants from '../constants'
+import Constants from '../constants';
 
 const { initialState, actionTypes } = Constants;
 
 export default (state = initialState.API, action) => {
   switch (action.type) {
+    case actionTypes.SEARCH_VALUE_CHANGE:
+      return {
+        ...state,
+        searchValue: action.value,
+      }
     case actionTypes.SEARCH_API_START:
       return {
         ...state,
-        status: "PENDING"
+        status: "PENDING",
       }
     case actionTypes.SEARCH_API_SUCCESS:
       return {

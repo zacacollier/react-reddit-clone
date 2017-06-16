@@ -3,6 +3,10 @@ import axios from 'axios';
 
 const { actionTypes, helpers } = Constants;
 
+export const handleSearchbarChange = (value) => ({
+  type: actionTypes.SEARCH_VALUE_CHANGE,
+  value
+})
 export const searchStart = () => ({
   type: actionTypes.SEARCH_API_START,
 });

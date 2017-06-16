@@ -1,6 +1,7 @@
 import * as dndTypes from './dndTypes';
 export default {
   API: {
+    searchValue: '',
     status: 'PENDING',
   },
   overlay: {

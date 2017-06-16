@@ -9,7 +9,10 @@ import './App.css';
 /*
  * NB: Header contains the Searchbar component
  */
-const App = ({ searchResults, searchStatus, overlayIsVisible }) => (
+const App = ({
+  // State-to-Props
+  searchResults, searchStatus, overlayIsVisible,
+}) => (
   <div className="App">
     <OverlayWrapper
       style={{

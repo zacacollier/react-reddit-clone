@@ -9,7 +9,7 @@ class AppWrapper extends Component {
     /* Before mounting, we need to
      * query the App's default SubReddit ('funny')
      */
-    this.props.initialSearch('funny');
+    this.props.searchForSubReddit('funny');
   }
   render() {
     return <App {...this.props} />
@@ -21,7 +21,7 @@ const mapStateToProps = ({ API }) => ({
   searchResults: API.data,
 });
 const mapDispatchToProps = (dispatch) => ({
-  initialSearch: (subReddit) => dispatch(subRedditSearch(subReddit)),
+  searchForSubReddit: (subReddit) => dispatch(subRedditSearch(subReddit)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppWrapper);

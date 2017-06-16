@@ -48,12 +48,12 @@ const DndLink = ({
   </div>
 );
 DndLink.propTypes = {
-  emailDroppedItem: PropTypes.func.isRequired,
-  openDroppedItemOnReddit: PropTypes.func.isRequired,
+  emailDroppedItem: PropTypes.func,
+  openDroppedItemOnReddit: PropTypes.func,
   linkType: PropTypes.string.isRequired,
   shareText: PropTypes.string.isRequired,
   connectDropTarget: PropTypes.func.isRequired,
-  getItem: PropTypes.object.isRequired,
+  getItem: PropTypes.object,
   isOver: PropTypes.bool.isRequired,
 }
 export default DropTarget(D.TOPIC, dropSpec, collect)(DndLink)
