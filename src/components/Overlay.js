@@ -7,8 +7,8 @@ import DndLink from './DndLink';
 import './Overlay.css';
 
 const Overlay = ({
-  overlayIsVisible, topic,
-  handleCloseOverlay, shareRedditTopic,
+  dndLinkAccepts, overlayIsVisible, topic,
+  handleCloseOverlay, emailRedditTopic, openRedditTopic, setLastDroppedItem,
 }) => (
   <div
     className='Overlay'
@@ -21,30 +21,34 @@ const Overlay = ({
       display: !!overlayIsVisible ? 'flex' : 'none',
     }}>
     <div className='Overlay-DndContainer'>
-      <DraggableTopic topic={topic} />
+      <DraggableTopic
+        topic={topic}
+        dragTypes={dndLinkAccepts.map(accept => accept.accepts )}
+      />
       <h2 className='Overlay-DragTitle'>
         Drag the card on the left to the desired action
       </h2>
       <div className='Overlay-DndLinkContainer'>
-        <DndLink
-          linkType='reddit'
-          shareText='Open on Reddit'
-          shareTopic={(topic, type) => shareRedditTopic(topic, type)}
-        />
-        <DndLink
-          linkType='mail'
-          shareText='Email to a Friend'
-          shareTopic={(topic, type) => shareRedditTopic(topic, type)}
-        />
+        {
+          dndLinkAccepts.map((accept, i) =>
+            <DndLink
+              linkType={accept.linkType}
+              shareText={accept.linkText}
+              dndType={accept.accepts}
+              lastDroppedItem={accept.lastDroppedItem}
+              setLastDroppedItem={(item) => setLastDroppedItem(item)}
+              key={i}
+            />
+          )
+        }
       </div>
     </div>
   </div>
 );
 Overlay.propTypes = {
+  handleCloseOverlay: PropTypes.func.isRequired,
   overlayIsVisible: PropTypes.bool.isRequired,
   topic: PropTypes.object,
-  handleCloseOverlay: PropTypes.func.isRequired,
-  shareRedditTopic: PropTypes.func.isRequired,
 }
 
 export default DragDropContext(HTML5Backend)(Overlay);

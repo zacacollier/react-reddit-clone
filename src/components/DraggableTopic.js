@@ -17,6 +17,7 @@ const collect = (connect, monitor) => ({
 const topicSource = {
   beginDrag(props) {
     // we need to retain the props of the topic being dragged
+    console.log(props);
     const topic = { ...props.topic };
     return topic;
   },

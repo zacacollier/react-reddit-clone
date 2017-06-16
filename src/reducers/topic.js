@@ -3,7 +3,7 @@ import Constants from '../constants';
 const {
   actionTypes,
   initialState,
- } = Constants;
+} = Constants;
 
   /* SELECT_TOPIC:
    * sets the whole 'data' in the Store.

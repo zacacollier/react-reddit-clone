@@ -17,28 +17,24 @@ const dropSpec = {
      * to either a `mailto` or the topic itself
      */
     console.log(props);
-    return { name: 'drop' }
+    // const item = monitor.getItem()
+    return
+    // return { type: props.dndType, topic: props.topic }
   }
 };
 const collect = (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
-  isOver: monitor.isOver(),
+  isOver: monitor.isOver({ shallow: true }),
   didDrop: monitor.didDrop(),
+  getDropResult: monitor.getDropResult(),
   getItem: monitor.getItem(),
 });
 
 const DndLink = ({
-  /* State to Props:
-   * `linkType`: either a `mailto` or `href`
-   * `shareText`: either "Email" or "Open on Reddit"
-   */
   linkType, shareText,
-  /* Dispatch to Props:
-   * `shareTopic`: construct and dispatch a link of designated `linkType`
-   */
-  shareTopic,
+  setLastDroppedItem,
   /* ReactDnd methods */
-  connectDropTarget, isOver, didDrop, getItem
+  connectDropTarget, isOver, didDrop, getDropResult, getItem
 }) => connectDropTarget(
   <div
     style={{
@@ -48,13 +44,16 @@ const DndLink = ({
   >
     <img src={sprites[linkType]} alt={'Share'}/>
     <h2>{shareText}</h2>
-    { didDrop && shareTopic(getItem, linkType) }
+    { /* Gotta cap off this expression with `& ''` so React doesn't freak out
+      about returning an Object (setLastDroppedItem's return value)
+      */
+    }
+    { didDrop && setLastDroppedItem({ ...getDropResult, topic: getItem }) && '' }
   </div>
 );
 DndLink.propTypes = {
   linkType: PropTypes.string.isRequired,
   shareText: PropTypes.string.isRequired,
-  shareTopic: PropTypes.func.isRequired,
   connectDropTarget: PropTypes.func.isRequired,
   isOver: PropTypes.bool.isRequired,
   didDrop: PropTypes.bool.isRequired,
