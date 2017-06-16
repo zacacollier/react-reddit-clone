@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
   handleSearchbarChange,
   subRedditSearch,
-} from '../actions/API';
+} from '../../actions/API';
 import './Searchbar.css';
 
 const Searchbar = ({

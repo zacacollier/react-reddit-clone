@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import helpers from '../constants/helperFunctions';
 import { toggleOverlayVisibility } from '../actions/overlay';
-import Overlay from '../components/Overlay';
+import Overlay from '../components/DndOverlay/Overlay';
 
 const OverlayWrapper = (props) => (
   <Overlay

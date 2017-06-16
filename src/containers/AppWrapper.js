@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import App from '../components/App';
+import App from '../components/App/App';
 import { subRedditSearch } from '../actions/API';
 
 class AppWrapper extends Component {

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource } from 'react-dnd';
-import TopicStat from '../components/TopicStat';
+import TopicStat from '../Topics/TopicStat';
 
-import './Topic.css'
+import '../Topics/Topic.css'
 import './DraggableTopic.css';
-import helpers from '../constants/helperFunctions';
-import * as D from '../constants/dndTypes';
+import helpers from '../../constants/helperFunctions';
+import * as D from '../../constants/dndTypes';
 const { formatVotes } = helpers;
 
 const collect = (connect, monitor) => ({

@@ -23,7 +23,6 @@ const Overlay = ({
     <div className='Overlay-DndContainer'>
       <DraggableTopic
         topic={topic}
-        dragTypes={dndLinkAccepts.map(accept => accept.accepts )}
       />
       <h2 className='Overlay-DragTitle'>
         Drag the card on the left to the desired action

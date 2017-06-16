@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from './Header';
-import OverlayWrapper from '../containers/OverlayWrapper';
-import Spinner from './Spinner';
-import TopicsList from './TopicsList';
+import Header from '../SearchHeader/Header';
+import OverlayWrapper from '../../containers/OverlayWrapper';
+import Spinner from '../Spinner';
+import TopicsList from '../Topics/TopicsList';
 import './App.css';
 
 /*

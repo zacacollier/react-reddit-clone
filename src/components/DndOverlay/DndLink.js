@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DropTarget } from 'react-dnd';
-import mail from '../assets/images/mail-logo.png';
-import reddit from '../assets/images/reddit-logo.png';
-import * as D from '../constants/dndTypes'
+import mail from '../../assets/images/mail-logo.png';
+import reddit from '../../assets/images/reddit-logo.png';
+import * as D from '../../constants/dndTypes'
 import './DndLink.css';
 
 const sprites = {

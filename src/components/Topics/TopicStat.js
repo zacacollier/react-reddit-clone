@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import sprite from '../assets/images/icon-sprite.png';
+import sprite from '../../assets/images/icon-sprite.png';
 import './Topic.css';
 
 const TopicStat = ({

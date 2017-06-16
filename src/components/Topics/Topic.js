@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TopicStat from './TopicStat';
-import constants from '../constants';
-import unknown from '../assets/images/unknown.png';
+import constants from '../../constants';
+import unknown from '../../assets/images/unknown.png';
 import './Topic.css';
 
 const { helpers } = constants;
@@ -13,12 +13,18 @@ const Topic = ({
   handleClick,
 }) => (
   <div className='Topic' onClick={() => handleClick(topic)}>
-    <img
-      className='Topic-thumbnail'
-      src={topic.data.thumbnail}
-      alt={unknown}
-    />
-    {
+    { topic.data.thumbnail === "self" ?
+      <img
+        className='Topic-thumbnail'
+        src={unknown}
+        alt={topic.title}
+      /> : <img
+        className='Topic-thumbnail'
+        src={topic.data.thumbnail}
+        alt={"none"}
+        />
+    }
+      {
       /* NB:
         `Topic-details` is `flex-direction: column`,
          `Topic-stats' is `flex-direction: row`.

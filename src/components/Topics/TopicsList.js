@@ -1,8 +1,8 @@
 import React from 'react';
 import Topic from './Topic';
 import { connect } from 'react-redux';
-import { selectTopic } from '../actions/selectTopic';
-import { toggleOverlayVisibility } from '../actions/overlay';
+import { selectTopic } from '../../actions/selectTopic';
+import { toggleOverlayVisibility } from '../../actions/overlay';
 import './TopicsList.css';
 
 const TopicsList = ({
