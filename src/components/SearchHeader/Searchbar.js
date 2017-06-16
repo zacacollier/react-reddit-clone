@@ -20,7 +20,14 @@ const Searchbar = ({
       <input
         type='text'
         className='Searchbar-input'
-        onChange={e => handleSearchbarChange(e.target.value)}
+        onChange={e => {
+          handleSearchbarChange(e.target.value)
+          // No need to spam requests
+          // (if the Search value is too short)
+          if (searchValue.length > 3) {
+            searchForSubReddit(searchValue)
+          }
+        }}
       />
     </form>
   </div>

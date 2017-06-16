@@ -9,7 +9,7 @@
   transition: display 300ms ease,
 }
 .Overlay-DndContainer {
-  min-height: 76.7%;
+  height: 100%;
   width: 66.7%;
   display: flex;
   align-self: center;
@@ -28,4 +28,13 @@
   flex-direction: column;
   align-self: center;
   line-height: normal;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

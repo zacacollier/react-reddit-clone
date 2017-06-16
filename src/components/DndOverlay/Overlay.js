@@ -20,7 +20,13 @@ const Overlay = ({
     style={{
       display: !!overlayIsVisible ? 'flex' : 'none',
     }}>
-    <div className='Overlay-DndContainer'>
+    <div
+      style={{
+        visiblity: !!overlayIsVisible ? 'visible' : 'hidden',
+        opacity: !!overlayIsVisible ? 1 : 0,
+        animation: 'fade 600ms',
+      }}
+      className='Overlay-DndContainer'>
       <DraggableTopic
         topic={topic}
       />

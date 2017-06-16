@@ -1,7 +1,6 @@
 .DropTarget {
   background-color: white;
-  min-height: auto;
-  height: 42%;
+  min-height: 42%;
   color: #0BB7FF;
   font-weight: 600;
   display: flex;
