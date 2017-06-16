@@ -4,8 +4,7 @@ import { DropTarget } from 'react-dnd';
 
 import mail from '../assets/images/mail-logo.png';
 import reddit from '../assets/images/reddit-logo.png';
-import * as D from '../constants/dndTypes';
-import './DndLink.css';
+import * as D from '../constants/dndTypes'
 
 const sprites = {
   mail,
@@ -31,17 +30,10 @@ const collect = (connect, monitor) => ({
 });
 
 const DndLink = ({
-  /* State to Props:
-   * `linkType`: either a `mailto` or `href`
-   * `shareText`: either "Email" or "Open on Reddit"
-   */
-  linkType, shareText, shareTopic,
-  /* Dispatch to Props:
-   * `shareTopic`: construct and dispatch a link of designated `linkType`
-   */
-  dispatchShareTopic, setSharedTopic,
+  linkType, shareText,
+  setLastDroppedItem,
   /* ReactDnd methods */
-  connectDropTarget, isOver, didDrop, getItem
+  connectDropTarget, isOver, didDrop, getDropResult, getItem
 }) => connectDropTarget(
   <div
     style={{
@@ -56,8 +48,11 @@ const DndLink = ({
       alt={'Share'}
     />
     <h2>{shareText}</h2>
-    { isOver && setSharedTopic(getItem, linkType)}
-    { didDrop && dispatchShareTopic(shareTopic) }
+    { /* Gotta cap off this expression with `& ''` so React doesn't freak out
+      about returning an Object (setLastDroppedItem's return value)
+      */
+    }
+    { didDrop && setLastDroppedItem({ ...getDropResult, topic: getItem }) && '' }
   </div>
 );
 
@@ -70,6 +65,24 @@ DndLink.propTypes = {
   didDrop: PropTypes.bool.isRequired,
   getItem: PropTypes.object,
 }
-// The first parameter MUST be the type of
-// the DragSource
-export default DropTarget(D.TOPIC, dropSpec, collect)(DndLink)
+const mapStateToProps = ({ lastDroppedItem }) => ({
+  currentlySelectedItem: lastDroppedItem.currentlySelectedItem,
+})
+const mapDispatchToProps = (dispatch) => ({
+  emailDroppedItem: (item) => {
+    console.log(item)
+    window.location.href = `mailto:?subject=${"Check out this Reddit post"}&body="http://www.reddit.com${item.permalink}"&target="_self"`;
+  },
+  openDroppedItemOnReddit: (item) => {
+    console.log(item)
+    window.open(`http://www.reddit.com${item.permalink}`)
+  },
+  // dispatch({ type: 'FETCH_CURRENTLY_SELECTED_ITEM', topic }),
+  setLastDroppedItem: (topic) => dispatch({ type: 'SET_LAST_DROPPED_ITEM', topic }),
+})
+// Compose right-to-left so that the component will have access
+// to BOTH Redux and ReactDnd props
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  DropTarget(D.TOPIC, dropSpec, collect),
+)(DndLink)
